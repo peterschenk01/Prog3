@@ -1,21 +1,23 @@
 package shelf;
 
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class ToolTest {
 	
 	@Test
-	public void testTool_Constructor() {
-		var tool = new Tool("Hammer");
-		
-		assertEquals(tool.getName(), "Hammer");
+	public void toolConstructorInitialize(){
+	    Tool tool = new Tool("Säge");
+	    assertEquals("Säge", tool.getName());
 	}
-	
-	@Test
-	public void testTool_toString() {
-		var tool = new Tool("Hammer");
-		
-		assertEquals(tool.toString(), "Tool [name=" + "Hammer" + "]");
+	  
+	@Test(expected=IllegalArgumentException.class)
+	public void bookConstructorNullName(){
+	    new Tool(null);
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	public void bookConstructorEmptyName(){
+	    new Tool("");
 	}
 }

@@ -5,7 +5,7 @@ public class Tool extends ShelfItem{
 	private final String name;
 	
 	public Tool(String name) {
-		if(name== null || name.equals(""))
+		if(name== null || name.isEmpty())
 			throw new IllegalArgumentException();
 		
 		this.name = name;

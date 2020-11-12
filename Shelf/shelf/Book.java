@@ -7,7 +7,7 @@ public class Book extends ShelfItem{
 	private final int pages;
 	
 	public Book(String title, String author, int pages) {
-		if(title == null || author == null || pages == 0 || title.equals("") || author.equals(""))
+		if(title == null || author == null || pages <= 0 || title.isEmpty() || author.isEmpty())
 			throw new IllegalArgumentException();
 		
 		this.title = title;
